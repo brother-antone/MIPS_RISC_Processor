@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RISCProcessor
-Tue Nov 26 20:07:01 2024
+Wed Nov 27 09:54:10 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 Patches 0.07std SJ Lite Edition
 
 
@@ -10,7 +10,14 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 Patches 0.07std SJ Lite Editio
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +41,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                              ;
-+-----------------------------+-------------------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Nov 26 20:07:01 2024                           ;
-; Quartus Prime Version       ; 21.1.0 Build 842 10/21/2021 Patches 0.07std SJ Lite Edition ;
-; Revision Name               ; RISCProcessor                                               ;
-; Top-level Entity Name       ; Registers                                                   ;
-; Family                      ; Cyclone V                                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                                   ;
-; Total registers             ; N/A until Partition Merge                                   ;
-; Total pins                  ; N/A until Partition Merge                                   ;
-; Total virtual pins          ; N/A until Partition Merge                                   ;
-; Total block memory bits     ; N/A until Partition Merge                                   ;
-; Total PLLs                  ; N/A until Partition Merge                                   ;
-; Total DLLs                  ; N/A until Partition Merge                                   ;
-+-----------------------------+-------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                                  ;
++---------------------------------+-------------------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Nov 27 09:54:10 2024                       ;
+; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 Patches 0.07std SJ Lite Edition ;
+; Revision Name                   ; RISCProcessor                                               ;
+; Top-level Entity Name           ; Registers                                                   ;
+; Family                          ; Cyclone V                                                   ;
+; Logic utilization (in ALMs)     ; N/A                                                         ;
+; Total registers                 ; 1024                                                        ;
+; Total pins                      ; 114                                                         ;
+; Total virtual pins              ; 0                                                           ;
+; Total block memory bits         ; 0                                                           ;
+; Total DSP Blocks                ; 0                                                           ;
+; Total HSSI RX PCSs              ; 0                                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                                           ;
+; Total HSSI TX PCSs              ; 0                                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                                           ;
+; Total PLLs                      ; 0                                                           ;
+; Total DLLs                      ; 0                                                           ;
++---------------------------------+-------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +160,116 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 7           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+; Registers.vhd                    ; yes             ; User VHDL File  ; C:/Users/lanto/Documents/Quartus/MIPS_RISC_Processor/Registers.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 881       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 738       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 608       ;
+;     -- 5 input functions                    ; 128       ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 2         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 1024      ;
+;                                             ;           ;
+; I/O pins                                    ; 114       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 1024      ;
+; Total fan-out                               ; 8566      ;
+; Average fan-out                             ; 4.30      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |Registers                 ; 738 (738)           ; 1024 (1024)               ; 0                 ; 0          ; 114  ; 0            ; |Registers          ; Registers   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1024  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 1024  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1024  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |Registers|Mux31           ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |Registers|Mux63           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1024                        ;
+;     ENA CLR           ; 1024                        ;
+; arriav_lcell_comb     ; 738                         ;
+;     normal            ; 738                         ;
+;         2 data inputs ; 2                           ;
+;         5 data inputs ; 128                         ;
+;         6 data inputs ; 608                         ;
+; boundary_port         ; 114                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.79                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,16 +278,25 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 Patches 0.07std SJ Lite Edition
-    Info: Processing started: Tue Nov 26 20:06:54 2024
+    Info: Processing started: Wed Nov 27 09:54:04 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISCProcessor -c RISCProcessor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
-Error (10500): VHDL syntax error at Registers.vhd(19) near text "std_logic_vector";  expecting "(", or "access", or "array", or "file", or "range", or "record" File: C:/Users/lanto/Documents/Quartus/MIPS_RISC_Processor/Registers.vhd Line: 19
-Info (12021): Found 0 design units, including 0 entities, in source file registers.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4846 megabytes
-    Error: Processing ended: Tue Nov 26 20:07:01 2024
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:09
+Info (12021): Found 2 design units, including 1 entities, in source file registers.vhd
+    Info (12022): Found design unit 1: Registers-Behavioral File: C:/Users/lanto/Documents/Quartus/MIPS_RISC_Processor/Registers.vhd Line: 19
+    Info (12023): Found entity 1: Registers File: C:/Users/lanto/Documents/Quartus/MIPS_RISC_Processor/Registers.vhd Line: 5
+Info (12127): Elaborating entity "Registers" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1876 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 50 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 1762 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4948 megabytes
+    Info: Processing ended: Wed Nov 27 09:54:10 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

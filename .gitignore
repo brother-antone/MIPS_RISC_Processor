@@ -1,0 +1,11 @@
+# Ignore everything by default
+*
+
+# Allow only .vhd .do .gitignore files
+!*.vhd
+!*.do
+!*.gitignore
+
+# Ignore hidden system files and folders
+.DS_Store
+Thumbs.db
